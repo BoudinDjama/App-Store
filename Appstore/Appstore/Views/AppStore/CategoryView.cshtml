@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Appstore.Models.Category>
+
+@{
+    ViewBag.Title = "CategoryView";
+}
+
+<h2>CategoryView</h2>
+
+<div style="float:left; margin:5px;">
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.ActionLink("Create New", "Create", "Categories")
+
+        </p>
+    }
+
+</div>
+<div style="float:left; margin:5px; ">
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.TextBox("filter")
+            <input class="btn" type="submit" value="Search" />
+        </p>
+    }
+</div>
+
+<div style="float:left; margin:5px; ">
+    @using (Html.BeginForm())
+    {
+        <p>
+            <input class="btn" type="submit" value="See all" />
+        </p>
+    }
+</div>
+
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr style="color:white; background-color:black; ">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+
+        <td style="align-content:center;">
+            <button style="background-color:darkblue;color:white;border-radius:8px;"
+                    onclick="location.href='@Url.Action("Edit", "Categories", new { id = item.Id })'">
+                Edit
+            </button>
+            <button style="background-color:black;color:white;border-radius:8px;"
+                    onclick="location.href='@Url.Action("Details", "Categories", new { id = item.Id })'">
+                Details
+            </button>
+            <button style="background-color:darkred;color:white;border-radius:8px;"
+                    onclick="location.href='@Url.Action("Delete", "Categories", new { id = item.Id })'">
+                Delete
+            </button>
+
+        </td>
+    </tr>
+    }
+
+</table>

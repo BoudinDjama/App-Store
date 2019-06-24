@@ -1,0 +1,74 @@
+﻿<link rel="stylesheet" href="..\..\Content\AppsStyle.css">
+
+
+@model Appstore.Models.Dev
+
+@{
+
+    ViewBag.Title = "Publisher Details";
+}
+
+
+<div>
+    <h4>Publisher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Publishers", "Appstore")
+</p>
+<h3>
+    Apps by @Html.DisplayFor(model => model.Name)
+</h3>
+@using Appstore.Models;
+@if (Model.Apps.Count < 1)
+{
+
+    <h4>
+        No app(s) found
+    </h4>
+}
+@foreach (App item in Model.Apps.Take(10))
+{
+    <div class="App-wrapper App-float">
+        <div>
+            <img class="App-Image" src="..\..\Images\Apex-legends.jpg">
+        </div>
+        <div>
+            <div class="App-categorie-date"> @item.PublishDate / Games</div>
+
+            <div class="App-Name">@item.Name</div>
+            <div class="App-Description App-Price-Description">@item.Description</div>
+            <div class="App-Price App-Price-Description">@item.Price $</div>
+        </div>
+    </div>
+}
+
+
+

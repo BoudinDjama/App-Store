@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Appstore.Models.App>
+
+<head>
+    <link rel="stylesheet" href="..\Content\AppsStyle.css">
+</head>
+@{
+    ViewBag.Title = "Today";
+}
+<h2>@ViewBag.Title</h2>
+<h2 class="App-Date-Today">@DateTime.Now.DayOfWeek, @String.Format("{0:MMMM}", DateTime.Now) @DateTime.Now.Day</h2>
+<h3>@ViewBag.Message</h3>
+<h4>Latest Apps</h4>
+@foreach (var item in Model)
+{
+    if (item.Id % 4 != 0)
+    {
+<h4 onclick="location.href='@Url.Action("AppDetails", "Applications", new { id = item.Id })'">
+
+
+    <div class="App-wrapper App-float">
+        <img class="App-Image" src=" @Html.DisplayFor(modelItem => item.ImagePath)">
+        <div class="App-categorie-date">GAMES</div>
+
+        <div class="App-Name"> @Html.DisplayFor(modelItem => item.Name)</div>
+        <div class="App-Description App-Price-Description">@Html.DisplayFor(modelItem => item.Description)</div>
+        <div class="App-Price App-Price-Description">@Html.DisplayFor(modelItem => item.Price)$</div>
+
+
+    </div>
+
+</h4>
+    }
+    else if (item.Id % 4 == 0)
+    {
+<h4 onclick="location.href='@Url.Action("AppDetails", "Applications", new { id = item.Id })'">
+
+    <div class="App-wrapper App-float App-Last">
+        <img class="App-Image" src=" @Html.DisplayFor(modelItem => item.ImagePath)">
+        <div class="App-categorie-date">GAMES</div>
+
+        <div class="App-Name"> @Html.DisplayFor(modelItem => item.Name)</div>
+        <div class="App-Description App-Price-Description">@Html.DisplayFor(modelItem => item.Description)</div>
+        <div class="App-Price App-Price-Description">@Html.DisplayFor(modelItem => item.Price)$</div>
+
+    </div>
+</h4>
+
+    }
+}
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.ActionLink("View All", "Apps", "AppStore")
+
+    </p>
+}
+@{ 
+    Appstore.Models.App items = Model.Select(x => x).OrderByDescending(x => x.Downloads).FirstOrDefault();
+
+<h4 class="Today-Best-App" >App of the day :</h4>
+
+<div class="Today-wrapper " onclick="location.href='@Url.Action("AppDetails", "Applications", new { id = items.Id })'">
+    <div class="Today-categorie-date" style="text-align:center">Download Now</div>
+
+    <img class="Today-Image" src="@Html.DisplayFor(modelItem => items.ImagePath)">
+
+    <div class="Today-Name">@Html.DisplayFor(modelItem => items.Name)</div>
+    <div class="Today-Description App-Price-Description">Action</div>
+    <div class="Today-Price App-Price-Description">@Html.DisplayFor(modelItem => items.Price)$</div>
+</div>
+    }

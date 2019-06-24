@@ -1,0 +1,132 @@
+﻿<head>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="..\Content\AppsStyle.css">
+</head>
+
+@{
+    ViewBag.Title = "Category";
+}
+<div class="bootstrapiso">
+    <h2>Category</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+                    <ul class="list-group category_block">
+                        <li class="list-group-item"><a href="@Url.Action("CategoryView", "Appstore")">Games</a></li>
+                        <li class="list-group-item"><a href="@Url.Action("CategoryView", "Appstore")">Education</a></li>
+                        <li class="list-group-item"><a href="@Url.Action("CategoryView", "Appstore")">Entertainment</a></li>
+                        <li class="list-group-item"><a href="@Url.Action("CategoryView", "Appstore")">Music</a></li>
+                        <li class="list-group-item"><a href="@Url.Action("CategoryView", "Appstore")">Sports</a></li>
+                        <li class="list-group-item"><a href="@Url.Action("CategoryView", "Appstore")">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-success text-white text-uppercase">Top Category</div>
+                    <div class="card-body">
+                        <img class="img-fluid" src="~/Images/games-icon.png" />
+                        <h5 class="card-title">Games</h5>
+                        <p class="card-text">Apps that provide single or multiplayer interactive activities for entertainment purposes. For example: action, adventure, board, card, family, music, puzzle, racing, role playing, simulation, sports, strategy.</p>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Images/games-icon.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="@Url.Action("CategoryView", "Appstore")" title="View Product">Games</a></h4>
+                                <p class="card-text">Apps that provide single or multiplayer interactive activities for entertainment purposes.</p>
+                                <div class="row">
+                                  
+                                    <div class="col">
+                                        <a href="@Url.Action("CategoryView", "Appstore")" class="btn btn-success btn-block">See all items</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Images/education-icon.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="@Url.Action("CategoryView", "Appstore")" title="View Product">Education</a></h4>
+                                <p class="card-text">Apps that provide an interactive learning experience on a specific skill or subject.</p>
+                                <div class="row">
+                                  
+                                    <div class="col">
+                                        <a href="@Url.Action("CategoryView", "Appstore")" class="btn btn-success btn-block">See all items</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Images/entertainment-icon.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="@Url.Action("CategoryView", "Appstore")" title="View Product">Entertainment</a></h4>
+                                <p class="card-text">Apps that are interactive and designed to entertain and inform the user.</p>
+                                <div class="row">
+                                    
+                                    <div class="col">
+                                        <a href="@Url.Action("CategoryView", "Appstore")" class="btn btn-success btn-block">See all items</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Images/music-icon.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="@Url.Action("CategoryView", "Appstore")" title="View Product">Music</a></h4>
+                                <p class="card-text">Apps that are for discovering, listening to, recording, performing, or composing music.</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="@Url.Action("CategoryView", "Appstore")" class="btn btn-success btn-block">See all items</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Images/sport-icon.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="@Url.Action("CategoryView", "Appstore")" title="View Product">Sports</a></h4>
+                                <p class="card-text">Apps related to professional, amateur, collegiate, or recreational sporting activities.</p>
+                                <div class="row">
+                                    
+                         
+                                    <div class="col">
+                                        <a href="@Url.Action("CategoryView", "Appstore")" class="btn btn-success btn-block">See all items</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Images/weather-icon.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="@Url.Action("CategoryView", "Appstore")" title="View Product">Weather</a></h4>
+                                <p class="card-text">Apps that provide forecasts, alerts, and information related to weather conditions.</p>
+                                <div class="row">
+
+                                    <div class="col">
+                                        <a href="@Url.Action("CategoryView", "Appstore")" class="btn btn-success btn-block">See all items</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
